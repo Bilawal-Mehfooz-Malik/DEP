@@ -39,27 +39,18 @@ class _MyTodosScreenState extends ConsumerState<MyTodosScreen> {
   AppBar _buildAppBar() {
     return AppBar(
       title: const Text('My Todos'),
-      actions: [_popupMenuButton()],
-    );
-  }
-
-  PopupMenuButton<dynamic> _popupMenuButton() {
-    return PopupMenuButton(
-      itemBuilder: (context) {
-        return [
-          PopupMenuItem(
-            child: const Text('History'),
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const CompletedTodosScreen(),
-                ),
-              );
-            },
-          ),
-          const PopupMenuItem(child: Text('Settings')),
-        ];
-      },
+      actions: [
+        IconButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const CompletedTodosScreen(),
+              ),
+            );
+          },
+          icon: const Icon(Icons.history),
+        ),
+      ],
     );
   }
 
