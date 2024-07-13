@@ -4,7 +4,7 @@ import 'package:open_weather_example_flutter/src/features/weather/domain/forecas
 import 'package:open_weather_example_flutter/src/features/weather/domain/weather/weather_data.dart';
 
 final cityProvider = StateProvider<String>((ref) {
-  return 'London';
+  return 'Mirpur';
 });
 
 final currentWeatherProvider =
